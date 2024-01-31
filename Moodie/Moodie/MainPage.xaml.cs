@@ -19,6 +19,30 @@ namespace Moodie
             { MoodEnum.okropny, "bad.png"}
         };
 
+        private static List<ImageButton> dayMoodImageButtons = new List<ImageButton>()
+        {
+            new ImageButton()
+            {
+                Source = DayMoodIcons[MoodEnum.zadowolony]
+            },
+            new ImageButton()
+            {
+                Source = DayMoodIcons[MoodEnum.dobry]
+            },
+            new ImageButton()
+            {
+                Source = DayMoodIcons[MoodEnum.przeciętny]
+            },
+            new ImageButton()
+            {
+                Source = DayMoodIcons[MoodEnum.słaby]
+            },
+            new ImageButton()
+            {
+                Source = DayMoodIcons[MoodEnum.okropny]
+            },
+        };
+
         public MainPage()
         {
             InitializeComponent();
