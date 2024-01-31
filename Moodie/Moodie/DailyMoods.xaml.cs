@@ -12,6 +12,12 @@ namespace Moodie
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DailyMoods : ContentPage
     {
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            moodsList.ItemsSource = await App.Database.GetDayMoods();
+        }
+
         public DailyMoods()
         {
             InitializeComponent();
