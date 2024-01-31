@@ -130,8 +130,10 @@ namespace Moodie
             }
         }
 
-        
-
+        private void GoToDailyMoodsPage(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DailyMoods());
+        }
 
     }
 }
