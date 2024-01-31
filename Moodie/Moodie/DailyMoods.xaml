@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Moodie.DailyMoods">
+             x:Class="Moodie.DailyMoods" Title="Daily moods">
 
     <ContentPage.Content>
         <ScrollView>
@@ -10,7 +10,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}"/>
+                                <Label Text="{Binding Data, StringFormat='{0:MM/dd/yyyy}'}"/>
                                 <Label Text=" - "/>
                                 <Label Text="{Binding Mood}"/>
                             </StackLayout>
