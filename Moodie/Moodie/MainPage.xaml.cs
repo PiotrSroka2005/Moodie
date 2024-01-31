@@ -73,6 +73,26 @@ namespace Moodie
             LastDayDateAndMood();
         }
 
-        
+
+        private async void AddDayMoodButtonClicked(object sender, EventArgs e)
+        {
+            if (selectedData.Date <= DateTime.Now.Date)
+            {
+                int column = Grid.GetColumn((ImageButton)sender);
+                var mood = Enum.Parse(typeof(MoodEnum), column.ToString());
+                var dayMood = new Humor();
+                dayMood.Data = selectedData.Date;
+                dayMood.Mood = (MoodEnum)mood;
+
+                await App.Database.InsertDayMoodAsync(dayMood);
+
+                DisableButons(column);
+                LastDayDateAndMood();
+            }
+            else
+                await DisplayAlert("Błąd", "Nieprawidłowa data", "OK");
+        }
+
+
     }
 }
