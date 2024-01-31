@@ -10,6 +10,15 @@ namespace Moodie
 {
     public partial class MainPage : ContentPage
     {
+        public static Dictionary<MoodEnum, string> DayMoodIcons = new Dictionary<MoodEnum, string>()
+        {
+            { MoodEnum.zadowolony, "good.png"},
+            { MoodEnum.dobry, "mid.png"},
+            { MoodEnum.przeciętny, "meh.png"},
+            { MoodEnum.słaby, "sad.png"},
+            { MoodEnum.okropny, "bad.png"}
+        };
+
         public MainPage()
         {
             InitializeComponent();
