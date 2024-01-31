@@ -43,6 +43,21 @@ namespace Moodie
             },
         };
 
+        public async void LastDayDateAndMood()
+        {
+            var result = await App.Database.GetLastDayMood();
+
+            if (result != null)
+            {
+                yourLastDayData.Text = result.Data.ToString("MM/dd/yyyy");
+                yourLastDayMood.Text = result.Mood.ToString();
+            }
+            else
+            {
+                yourLastDayData.Text = "Brak danych";
+            }
+        }
+
         public MainPage()
         {
             InitializeComponent();
