@@ -27,7 +27,15 @@
 
         </Grid>
 
-        
+        <Label Text="Twój poprzedni dzień: " FontSize="18" TextColor="Black" Margin="0, 50, 0, 0"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Label x:Name="yourLastDayData" FontSize="16" TextColor="Black"/>
+            <Label Text=" - " FontSize="16" TextColor="Black"/>
+            <Label x:Name="yourLastDayMood" FontSize="16" TextColor="Black"/>
+        </StackLayout>
+
+        <Button Clicked="GoToDailyMoodsPage" Text="Zobacz więcej danych" VerticalOptions="EndAndExpand"/>
 
 
     </StackLayout>
