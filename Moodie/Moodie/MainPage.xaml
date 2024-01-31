@@ -12,7 +12,24 @@
 
         <DatePicker x:Name="selectedData" PropertyChanged="SelectedDataPropertyChanged"/>
 
-       
+        <Grid x:Name="buttonsGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+        
+
+
     </StackLayout>
 
 </ContentPage>
