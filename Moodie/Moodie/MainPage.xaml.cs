@@ -61,6 +61,18 @@ namespace Moodie
         public MainPage()
         {
             InitializeComponent();
+
+            for (int i = 0; i < dayMoodImageButtons.Count; i++)
+            {
+                dayMoodImageButtons[i].Padding = 4;
+                buttonsGrid.Children.Add(dayMoodImageButtons[i]);
+                Grid.SetColumn(dayMoodImageButtons[i], i);
+                dayMoodImageButtons[i].Clicked += AddDayMoodButtonClicked;
+            }
+
+            LastDayDateAndMood();
         }
+
+        
     }
 }
