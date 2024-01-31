@@ -16,24 +16,24 @@ namespace Moodie
             _database.CreateTableAsync<Humor>();
         }
 
-        public Task<int> InsertDayMoodAsync(Humor)
+        public Task<int> InsertDayMoodAsync(Humor dayMood)
         {
-            return _database.InsertAsync(Humor);
+            return _database.InsertAsync(dayMood);
         }
 
         public Task<Humor> GetLastDayMood()
         {
-            return _database.Table<Humor>().Where(d => d.Date != DateTime.Now.Date).OrderByDescending(d => d.Date).FirstOrDefaultAsync();
+            return _database.Table<Humor>().Where(d => d.Data != DateTime.Now.Date).OrderByDescending(d => d.Data).FirstOrDefaultAsync();
         }
 
         public Task<Humor> GetDayMood(DateTime dateTime)
         {
-            return _database.Table<Humor>().Where(d => d.Date == dateTime).FirstOrDefaultAsync();
+            return _database.Table<Humor>().Where(d => d.Data == dateTime).FirstOrDefaultAsync();
         }
 
         public Task<List<Humor>> GetDayMoods()
         {
-            return _database.Table<Humor>().OrderByDescending(d => d.Date).ToListAsync();
+            return _database.Table<Humor>().OrderByDescending(d => d.Data).ToListAsync();
         }
    }
 }
