@@ -10,6 +10,6 @@ namespace Moodie
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public DateTime Data { get; set; }
-        public MoodEnum Humor { get; set; }
+        public MoodEnum Mood { get; set; }
     }
 }
