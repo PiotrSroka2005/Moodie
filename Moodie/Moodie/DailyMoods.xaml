@@ -25,7 +25,7 @@
                                     </Grid.ColumnDefinitions>
                                     <StackLayout Orientation="Horizontal" Margin="5">
                                         <Image Source="{Binding Source}" WidthRequest="50" />
-                                        <Label VerticalOptions="Center" Grid.Column="1" Text="{Binding Mood}" TextColor="Black"/> 
+                                        <Label VerticalOptions="Center" Margin="5,0,0,0" Grid.Column="1" Text="{Binding Mood}" TextColor="Black"/> 
                                     </StackLayout>
                                    
                                     <Label VerticalOptions="Center" FontSize="16" Grid.Column="1" HorizontalTextAlignment="Center" Text="{Binding Data, StringFormat='{0:dd.MM.yyyy}'}" TextColor="Black"/>
