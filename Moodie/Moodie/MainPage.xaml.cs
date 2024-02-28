@@ -85,6 +85,8 @@ namespace Moodie
                 dayMood.Mood = (MoodEnum)mood;
                 dayMood.Source = DayMoodIcons[dayMood.Mood];
 
+                DisplayAlert("Alert", dayMood.Source, "OK");
+
                 await App.Database.InsertDayMoodAsync(dayMood);
 
                 DisableButons(column);
