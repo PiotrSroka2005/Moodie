@@ -35,7 +35,7 @@
             <Label x:Name="yourLastDayMood" FontSize="16" TextColor="Black"/>
         </StackLayout>
 
-        <Button Clicked="GoToDailyMoodsPage" Text="Zobacz więcej danych" VerticalOptions="EndAndExpand"/>
+        <Button BackgroundColor="Blue" CornerRadius="10" Margin="10" TextColor="White" TextTransform="None" Clicked="GoToDailyMoodsPage" Text="Zobacz więcej danych" VerticalOptions="EndAndExpand"/>
 
 
     </StackLayout>

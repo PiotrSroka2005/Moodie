@@ -11,8 +11,8 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label HorizontalOptions="Center" Grid.Column="0" Grid.ColumnSpan="2" TextColor="White" Text="Nastrój" />
-                <Label  Grid.Column="2" TextColor="White" Text="Data" />
+                <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" Grid.ColumnSpan="2" TextColor="White" Text="Nastrój" />
+                <Label  Grid.Column="2" VerticalOptions="Center" TextColor="White" Text="Data" />
             </Grid>
             <ScrollView>
                 <ListView x:Name="moodsList">
@@ -27,8 +27,8 @@
                                     </Grid.ColumnDefinitions>
 
                                     <Image Grid.Column="0" Source="{Binding Source}" />
-                                    <Label Grid.Column="1" Text="{Binding Mood}"/>
-                                    <Label Grid.Column="2" Text="{Binding Data, StringFormat='{0:dd/MM/yyyy}'}"/>
+                                    <Label VerticalOptions="Center" Grid.Column="1" Text="{Binding Mood}"/>
+                                    <Label VerticalOptions="Center" Grid.Column="2" Text="{Binding Data, StringFormat='{0:dd/MM/yyyy}'}"/>
 
                                 </Grid>
                             </ViewCell>
