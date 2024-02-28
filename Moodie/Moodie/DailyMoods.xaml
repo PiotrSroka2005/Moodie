@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Moodie.DailyMoods" Title="Daily moods">
+             x:Class="Moodie.DailyMoods" Title="Daily moods" NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
         <StackLayout Margin="10">
@@ -9,13 +9,12 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" Grid.ColumnSpan="2" TextColor="White" Text="Nastrój" />
-                <Label  Grid.Column="2" VerticalOptions="Center" TextColor="White" Text="Data" />
+                <Label VerticalOptions="Center" HorizontalOptions="Center" FontSize="16" TextColor="White" Text="Nastrój" />
+                <Label  Grid.Column="1" VerticalOptions="Center" TextColor="White" FontSize="16" Text="Data" HorizontalOptions="CenterAndExpand"/>
             </Grid>
             <ScrollView>
-                <ListView x:Name="moodsList">
+                <ListView x:Name="moodsList" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -23,12 +22,13 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-
-                                    <Image Grid.Column="0" Source="{Binding Source}" />
-                                    <Label VerticalOptions="Center" Grid.Column="1" Text="{Binding Mood}"/>
-                                    <Label VerticalOptions="Center" Grid.Column="2" Text="{Binding Data, StringFormat='{0:dd/MM/yyyy}'}"/>
+                                    <StackLayout Orientation="Horizontal" Margin="5">
+                                        <Image Source="{Binding Source}" WidthRequest="50" />
+                                        <Label VerticalOptions="Center" Grid.Column="1" Text="{Binding Mood}" TextColor="Black"/> 
+                                    </StackLayout>
+                                   
+                                    <Label VerticalOptions="Center" FontSize="16" Grid.Column="1" HorizontalTextAlignment="Center" Text="{Binding Data, StringFormat='{0:dd.MM.yyyy}'}" TextColor="Black"/>
 
                                 </Grid>
                             </ViewCell>
