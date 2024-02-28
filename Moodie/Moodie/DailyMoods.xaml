@@ -36,7 +36,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </ScrollView>
-            <Button Text="Wróć" BackgroundColor="Blue" CornerRadius="10" HorizontalOptions="Center" TextColor="White" />
+            <Button Text="Wróć" Clicked="GoToMainPage" BackgroundColor="Blue" CornerRadius="10" HorizontalOptions="Center" TextColor="White" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

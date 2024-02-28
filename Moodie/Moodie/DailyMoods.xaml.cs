@@ -20,9 +20,16 @@ namespace Moodie
             
         }
 
+
+
         public DailyMoods()
         {
             InitializeComponent();
+        }
+
+        private void GoToMainPage(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainPage());
         }
     }
 }
