@@ -11,5 +11,6 @@ namespace Moodie
         public int Id { get; set; }
         public DateTime Data { get; set; }
         public MoodEnum Mood { get; set; }
+        public string Source { get; set; }
     }
 }

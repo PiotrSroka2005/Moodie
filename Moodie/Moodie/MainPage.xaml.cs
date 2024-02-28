@@ -49,7 +49,7 @@ namespace Moodie
 
             if (result != null)
             {
-                yourLastDayData.Text = result.Data.ToString("MM/dd/yyyy");
+                yourLastDayData.Text = result.Data.ToString("dd/MM/yyyy");
                 yourLastDayMood.Text = result.Mood.ToString();
             }
             else
@@ -83,6 +83,7 @@ namespace Moodie
                 var dayMood = new Humor();
                 dayMood.Data = selectedData.Date;
                 dayMood.Mood = (MoodEnum)mood;
+                dayMood.Source = DayMoodIcons[dayMood.Mood];
 
                 await App.Database.InsertDayMoodAsync(dayMood);
 
@@ -137,3 +138,4 @@ namespace Moodie
 
     }
 }
+    

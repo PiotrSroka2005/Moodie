@@ -4,20 +4,39 @@
              x:Class="Moodie.DailyMoods" Title="Daily moods">
 
     <ContentPage.Content>
-        <ScrollView>
-            <ListView x:Name="moodsList">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Data, StringFormat='{0:MM/dd/yyyy}'}"/>
-                                <Label Text=" - "/>
-                                <Label Text="{Binding Mood}"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </ScrollView>
+        <StackLayout Margin="10">
+            <Grid BackgroundColor="Blue" HeightRequest="35">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalOptions="Center" Grid.Column="0" Grid.ColumnSpan="2" TextColor="White" Text="Nastrój" />
+                <Label  Grid.Column="2" TextColor="White" Text="Data" />
+            </Grid>
+            <ScrollView>
+                <ListView x:Name="moodsList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0" Source="{Binding Source}" />
+                                    <Label Grid.Column="1" Text="{Binding Mood}"/>
+                                    <Label Grid.Column="2" Text="{Binding Data, StringFormat='{0:dd/MM/yyyy}'}"/>
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Button Text="Wróć" BackgroundColor="Blue" CornerRadius="10" HorizontalOptions="Center" TextColor="White" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
